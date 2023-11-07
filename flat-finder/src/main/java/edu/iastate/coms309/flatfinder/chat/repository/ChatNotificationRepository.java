@@ -1,0 +1,12 @@
+package edu.iastate.coms309.flatfinder.chat.repository;
+
+import edu.iastate.coms309.flatfinder.chat.model.ChatNotification;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ChatNotificationRepository extends JpaRepository<ChatNotification, String> {
+    List<ChatNotification> findByRecipientId(String recipientId);
+}
